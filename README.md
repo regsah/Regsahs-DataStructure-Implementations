@@ -48,6 +48,6 @@ Operator overloads:
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Note: Since it is a template class, it can take different types of homogenous data and it should be declared with the standard template class declaration 
-(ex: LinkedList<int> myLinkedList(X);)
+(ex: LinkedList\<int\> myLinkedList(X);)
   
 
