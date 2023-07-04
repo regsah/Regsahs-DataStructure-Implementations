@@ -9,7 +9,7 @@ TODO:
 Constructors:
 - LinkedList(int length): Creates a list of "length" nodes, initializes the nodes with the default value.
 - LinkedList(int length, T startingData): creates a list of "length" nodes, initializes the nodes with the startingNode.
-- LinkedList(std::initializer_list<T> list): creates and initializes the object with an initializer_list ("{}"). 
+- LinkedList(std::initializer_list\<T\> list): creates and initializes the object with an initializer_list ("{}"). 
 
 Methods:
 - void clear(): deletes everything in the object.
