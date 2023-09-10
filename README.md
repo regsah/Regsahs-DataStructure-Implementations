@@ -4,7 +4,6 @@ a linked list implementation in C++
 TODO:
 - Adding comments and making the code more readable in general
 - Adding robust error handling 
-- Adding a proper print() method and overloading the << operator.
 
 Constructors:
 - LinkedList(int length): Creates a list of "length" nodes, initializes the nodes with the default value.
