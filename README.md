@@ -8,5 +8,9 @@ The `LinkedList` class is a versatile linked list implementation that provides d
 The Linked List supports different constructors and methods, including resizing, reversing, and more.
 
 ## Stack (Stack.h)
+
 The `Stack` class implements a stack data structure using a singly linked list. It supports standard stack operations like push, pop, and top.
 
+## Queue (Queue.h)
+
+The `Queue` class implements a queue data structure using a singly linked list. It provides methods for enqueueing, dequeueing, checking the front element and more.
