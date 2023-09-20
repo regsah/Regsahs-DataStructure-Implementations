@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <initializer_list> 
+#include <stdexcept>
 
 template <typename T>
 class Queue
