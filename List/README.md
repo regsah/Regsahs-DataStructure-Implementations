@@ -19,7 +19,9 @@ The `List` class is a C++ template class implementing a list data structure.
 - `void pop_front()`: Removes the first element from the list.
 
 - `void remove(int index)`: Removes the element at the specified index.
-
+  
+- `void remove(int start, int end)`: Removes the element at the specified range. (Doesn't include end).
+  
 - `void push_back(const T& element)`: Adds an element to the end of the list.
 
 - `void push_front(const T& element)`: Adds an element to the front of the list.
@@ -40,6 +42,8 @@ The `List` class is a C++ template class implementing a list data structure.
 - `int capacity() const`: Returns the capacity of the list.
 
 - `T& operator[](int index)`: Returns a reference to the element at the specified index.
+  
+- `const T& operator[](int index) const`: Returns a reference to the element at the specified index.
 
 
 ## TODO
