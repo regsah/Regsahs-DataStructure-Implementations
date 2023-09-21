@@ -113,42 +113,42 @@ public:
 
     void remove(int index)
     {
+        //handled explicitly here as index = -1 will throw an error 
+        //since it would make start = -1 = m_size - 1 and end = 0
+        //causing the start to be after end 
         if(index < 0) index += m_size;
+        remove(index, index + 1);
+    }
 
-        if(index == 0)
+    void remove(int start, int end)
+    {
+        if(start < 0) start += m_size;
+        if(end < 0) end += m_size;
+        if(end > m_size) end = m_size;
+
+        if(start > end) throw std::runtime_error("Start index cannot be bigger than the end index");
+        if(start > m_size) throw std::runtime_error("Start index is out of bounds");
+
+        int elementsToRemove = end - start;
+        int elementsToShift = m_size - end;
+
+        if(start == 0 && end == m_size) clear();
+        else if(m_size - elementsToRemove < m_capacity/2)
         {
-            pop_front();
-        }
-        else if(index == m_size)
-        {
-            pop_back();
-        }
-        else if(index < m_size)
-        {
-            --m_size;
+            m_capacity /= 2;
+            T* new_data = new T[m_capacity];
+            for(int i=0; i<start; ++i) new_data[i] = m_data[i]; 
+            for(int i=end; i<m_size; ++i) new_data[i-elementsToRemove] = m_data[i];
 
-            if(m_size > m_capacity/2)
-            {
-                for(int i=index; i<m_size; ++i)
-                {
-                    m_data[i] = m_data[i+1]; 
-                }
-            }
-            else
-            {
-                m_capacity = m_size;
+            delete[] m_data;
+            m_data = new_data;
 
-                T* new_data = new T[m_capacity];
-                for(int i=0; i<index; ++i) new_data[i] = m_data[i];
-                for(int i=index; i<m_size; ++i) new_data[i] = m_data[i+1];
-
-                delete[] m_data;
-                m_data = new_data;
-            }
+            m_size -= elementsToRemove;
         }
         else
         {
-            throw std::runtime_error("Remove operation is out of bounds");
+            for (int i = 0; i < elementsToShift; ++i) m_data[start + i] = m_data[end + i];
+            m_size -= elementsToRemove;
         }
     }
 
@@ -332,6 +332,19 @@ public:
 
         return m_data[index];
     }
+
+    const T& operator[](int index) const 
+    {
+        if (index < 0) index += m_size;
+
+        if (index >= m_size) 
+        {
+            throw std::runtime_error("Index is out of bounds");
+        }
+
+        return m_data[index];
+    }
+
 };
 
 #endif
