@@ -1,5 +1,5 @@
-#ifndef LINKEDLIST_H
-#define LINKEDLIST_H
+#ifndef QUEUE_H
+#define QUEUE_H
 
 #include <iostream>
 #include <initializer_list> 
