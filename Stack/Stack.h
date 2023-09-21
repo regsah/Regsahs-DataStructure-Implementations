@@ -1,5 +1,5 @@
-#ifndef LINKEDLIST_H
-#define LINKEDLIST_H
+#ifndef STACK_H
+#define STACK_H
 
 #include <iostream>
 #include <initializer_list> 
