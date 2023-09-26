@@ -22,3 +22,7 @@ The `Heap` class implements a heap data structure, supporting both max heap and 
 ## Dynamic Array (List.h)
 
 The `List` class is a dynamic array implementation that provides dynamic storage for a sequence of elements. It offers operations for adding, removing, and accessing elements efficiently. The List supports different constructors like a std::initializer_list<T> constructor and various methods such as a resize method.
+
+## Binary Search Tree (BSTree.h)
+
+The `BSTree` class is a C++ template class implementing a binary search tree data structure. It provides methods for inserting, searching, and removing elements, as well as clearing the tree and checking if it's empty.
